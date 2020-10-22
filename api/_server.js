@@ -14,6 +14,9 @@ const { applyMiddleware } = require("./_utils");
 applyMiddleware(middleWare, router);
 
 // Routes
+const { router: userRoutes } = require("./_routes/userRoutes");
+
+router.use("/api/users", userRoutes);
 
 // Setup server
 const server = http.createServer(router);
